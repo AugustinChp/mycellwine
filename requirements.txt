@@ -2,10 +2,12 @@ asgiref==3.4.1
 astroid==2.8.6
 autopep8==1.6.0
 Django==3.2.9
+django-debug-toolbar==3.2.2
 isort==5.10.1
 lazy-object-proxy==1.6.0
 mccabe==0.6.1
 platformdirs==2.4.0
+psycopg2-binary==2.9.2
 pycodestyle==2.8.0
 pylint==2.11.1
 python-dotenv==0.19.2
