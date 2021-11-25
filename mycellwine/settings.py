@@ -17,6 +17,9 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # third-party
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Django
 
@@ -65,6 +68,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'cellar.apps.CellarConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,6 +76,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
