@@ -17,6 +17,9 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # third-party
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Django
 
@@ -51,10 +54,22 @@ else:
     DEBUG = True
     DATABASES = {
         'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('DB_NAME'),
+            'USER': os.getenv('DB_USER'),
+            'PASSWORD': os.getenv('DB_USER_PASSWORD'),
+            'HOST': os.getenv('DB_HOST'),
+            'PORT': '5432',
+        }
+    }
+    """
+    DATABASES = {
+        'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+    """
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -72,6 +87,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'cloudinary',
+    'cellar',
 ]
 
 MIDDLEWARE = [
