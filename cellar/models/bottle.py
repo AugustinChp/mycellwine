@@ -29,9 +29,11 @@ class Bottle(BaseModel):
         related_name="certification",
         blank=True,
     )
+    technical_sheet = models.ForeignKey(
+        'TechnicalSheet', null=True, on_delete=models.SET_NULL)
 
     class Meta:
-        db_table = 'bottle'
+        db_table = 'Bottle'
         app_label = 'cellar'
 
     def __str__(self):
