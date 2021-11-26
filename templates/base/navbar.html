@@ -1,2 +1,58 @@
 {% load static %}
 
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" aria-label="Main navigation">
+  <div class="container">
+    <button class="navbar-toggler px-2 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand me-0" href="#">MyCellWine</a>
+    <div class="navbar-collapse offcanvas-collapse open" id="navbarsExampleDefault">
+      <ul class="navbar-nav ms-auto d-flex mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center active" aria-current="page" href="#">
+            <i class="bi bi-house-door fs-3 px-1"></i>
+            <div class='label px-1'>Cave</div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" aria-current="page" href="#">
+            <i class="bi bi-heart fs-3 px-1"></i>
+            <div class='label px-1'>Coups de coeur</div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" aria-current="page" href="#">
+            <i class="bi bi-graph-up-arrow fs-3 px-1"></i>
+            <div class='label px-1'>Tableau de bord</div>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle fs-3 px-1"></i>
+            <div class='label px-1'>Profile</div>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown01">
+            <li><a class="dropdown-item d-flex align-items-center" href="#">
+              <i class="bi bi-person-circle fs-4 px-1"></i>
+              <div class='label px-1'>Profile</div>
+            </a></li>
+            <li><a class="dropdown-item d-flex align-items-center" href="#">
+              <i class="bi bi-gear fs-4 px-1"></i>
+              <div class='label px-1'>Paramétrage</div>
+            </a></li>
+            <li><a class="dropdown-item d-flex align-items-center" href="#">
+              <i class="bi bi-box-arrow-left fs-4 px-1"></i>
+              <div class='label px-1'>Déconnexion</div>
+            </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-nav">
+        <a class="nav-item nav-link px-2 py-0" href="#">
+            <i class="bi bi-bell fs-3"></i>
+            <span class="badge rounded-pill badge-notification bg-danger"> </span>
+        </a>
+    </div>
+  </div>
+</nav>
