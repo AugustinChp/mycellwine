@@ -1,0 +1,29 @@
+.badge-notification {
+    position: absolute;
+    width: .4rem;
+    height: .4rem;
+    font-size: .4rem;
+    margin-top: .3rem;
+    margin-left: -0.5rem;
+    padding: 0.2em 0.45em;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.navbar-collapse .navbar-nav {
+    align-items: center;
+}
+
+
+
+@media (max-width: 991.98px) {
+    .nav-link .label {
+        display: block;
+    }
+
+    .navbar-collapse .navbar-nav {
+        align-items: start;
+    }
+}

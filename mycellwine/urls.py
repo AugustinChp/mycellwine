@@ -33,6 +33,7 @@ urlpatterns = [
     path('', include('cellar.urls'))
 ]
 
+
 if settings.DEBUG:
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
