@@ -54,11 +54,11 @@
 }
 
 .navbar-item.active .nav-item-icon {
-    color: #FF385C;
+    color: #8A1A32;
 }
 
 .navbar-item:hover .nav-item-icon {
-    color: #FF385C;
+    color: #8A1A32;
 }
 
 .navbar-item.active .nav-item-label {
