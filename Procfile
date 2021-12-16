@@ -1,0 +1,1 @@
+web: gunicorn mycellwine.wsgi --log-file -

@@ -22,6 +22,7 @@ import cloudinary.uploader
 import cloudinary.api
 
 # Django
+import dj_database_url
 
 # local Django
 
@@ -39,16 +40,8 @@ if os.environ.get('ENV') == 'PRODUCTION':
 
     # Database
     # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv('DB_NAME'),
-            'USER': os.getenv('DB_USER'),
-            'PASSWORD': os.getenv('DB_USER_PASSWORD'),
-            'HOST': os.getenv('DB_HOST'),
-            'PORT': '5432',
-        }
-    }
+    prod_db = dj_database_url.config(conn_max_age=500)
+    DATABASES['default'].update(prod_db)
 else:
     SECRET_KEY = "****1234****"
     DEBUG = True
@@ -75,7 +68,7 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mycellwine.herokuapp.com']
 
 
 # Application definition
@@ -93,6 +86,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -163,6 +157,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
