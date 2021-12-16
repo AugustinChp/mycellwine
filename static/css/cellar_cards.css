@@ -1,0 +1,128 @@
+.cellar-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.cellar-card {
+    width: 100%;
+    height: 110px;
+    margin: 5px 0;
+    border: 1px solid rgba(0, 0, 0, .15);
+    background-color: #ffffff;
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: flex;
+    overflow: hidden;
+}
+
+.card-color {
+    position: relative;
+    background-color: tomato;
+    width: 15px;
+}
+
+.card-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+    width: 20%;
+}
+
+.card-img img {
+    position: relative;
+    height: 100%;
+    width: auto;
+}
+
+.card-details {
+    position: relative;
+    padding: 5px 0;
+    margin-left: 2px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+}
+
+.details-domain {
+    position: relative;
+    font-size: 12px;
+    font-weight: 400;
+    white-space: normal;
+    text-overflow: ellipsis;
+    color: #737373;
+}
+
+.details-appelation {
+    position: relative;
+    font-size: 12px;
+    font-weight: 600;
+    height: 38px;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+}
+
+.details-location {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    color: #737373;
+}
+
+.country-flag {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 5px;
+    overflow: hidden;
+}
+
+.country-flag img {
+    height: 15px;
+    width: auto;
+}
+
+.location-label {
+    font-size: 12px;
+    font-weight: 400;
+    white-space: normal;
+    text-overflow: ellipsis;
+}
+
+.details-features {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #737373;
+}
+
+.feature-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.feature-item i {
+    font-size: 13px;
+    margin-right: 4px;
+}
+
+.feature-item .value {
+    font-size: 13px;
+    font-weight: 300;
+}

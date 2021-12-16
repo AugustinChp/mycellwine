@@ -17,17 +17,14 @@
         <link rel="stylesheet" href="{% static 'css/all.css' %}">
     </head>
     <body>
-        <div class="page-holder">
             {% include 'base/navbar.html' %}
-
-            {% block content %}
-
-            {% endblock content %}
-
-            {% block payment-gateway %}{% endblock payment-gateway %}
             
+            <div class="content">
+                {% block content %}
+
+                {% endblock content %}
+            </div>            
             {% include 'base/footer.html' %}
             {% include 'base/scripts.html' %}
-        </div>
     </body>
 </html>

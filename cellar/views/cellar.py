@@ -15,4 +15,4 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'cellar/bottle_list.html')
+    return render(request, 'cellar/cellar.html')

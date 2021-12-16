@@ -52,7 +52,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
 else:
     SECRET_KEY = "****1234****"
     DEBUG = True
-    """
+
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -70,7 +70,7 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
+    """
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
