@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
-    --hover-color: #8A1A34;
+    --hover-color: #8A1A32;
     --red-wine-color: #FDF6F7;
     --white-wine-color: #F8F6E4;
     --sparkling-wine-color: #F1F2ED;
@@ -49,4 +49,24 @@ ul {
     padding: O;
     margin: O;
     list-style-type: none;
+}
+
+.red {
+    background-color: #8A1A32;
+}
+
+.white {
+    background-color: #fed374;
+}
+
+.pink {
+    background-color: #e18891;
+}
+
+.sweet {
+    background-color: #9ec3c7;
+}
+
+.sparkling {
+    background-color: #edd5b6;
 }
