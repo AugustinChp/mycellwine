@@ -26,9 +26,13 @@ from django.urls import include, path
 from django.contrib import admin
 
 # local Django
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('cellar.urls'))
 ]
+
 
 if settings.DEBUG:
     urlpatterns = [

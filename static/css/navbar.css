@@ -1,0 +1,110 @@
+.navbar {
+    border-top: 1px solid rgb(235, 235, 235);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navbar-light {
+    background: #fff;
+}
+
+.fixed-navbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1030;
+}
+
+.navbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    max-width: 20%;
+    min-width: 0px;
+    overflow-wrap: break-word;
+    padding: 0 2px;
+    margin: 0 10px;
+    color: #737373;
+}
+
+.nav-item-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
+    position: relative;
+}
+
+.nav-item-icon i {
+    font-size: 20px;
+}
+
+.nav-item-label {
+    font-size: 13px;
+    line-height: 12px;
+    max-height: 24px;
+    text-overflow: ellipsis;
+    font-weight: 300;
+    margin-top: -5px;
+}
+
+.navbar-item.active .nav-item-icon {
+    color: #FF385C;
+}
+
+.navbar-item:hover .nav-item-icon {
+    color: #FF385C;
+}
+
+.navbar-item.active .nav-item-label {
+    color: #000;
+    font-weight: 400;
+
+}
+
+.navbar-item:hover .nav-item-label {
+    color: #000;
+    font-weight: 600;
+}
+
+.banner {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    background-color: #fff;
+    z-index: 1030;
+}
+
+.banner-item {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-title {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-item i {
+    font-size: 20px;
+}
+
+.banner .brand {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 12px;
+}
