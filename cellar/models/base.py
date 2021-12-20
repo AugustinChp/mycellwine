@@ -65,28 +65,12 @@ class BaseModel(models.Model):
 
     find(model, instance_id)
     """
-    description = models.TextField(null=True)
+    description = models.TextField(default="", blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         abstract = True
-
-    def save(self, data, *args, **kwargs):
-        '''
-        description
-
-        Parameters:
-            a (int): A decimal integer
-            b (int): Another decimal integer
-
-        Returns:
-
-        '''
-        for key, item in data.items():
-            setattr(self, key, item)
-        self.modified_at = datetime.datetime.utcnow()
-        super().save(*args, **kwargs)
 
     @classmethod
     def find(cls, instance_id):
