@@ -14,9 +14,14 @@ from django.contrib import admin
 from .models import *
 
 # Register your models here.
+
+admin.site.register(Bottle)
+admin.site.register(Cellar)
+admin.site.register(CellarBottle)
 admin.site.register(Country)
 admin.site.register(Region)
 admin.site.register(Appellation)
 admin.site.register(AppellationType)
+admin.site.register(UserCellar)
 admin.site.register(Wine)
 admin.site.register(WineType)
