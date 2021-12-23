@@ -49,10 +49,10 @@ CLASSES :
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class Wine(BaseModel):
+class Wine(TrackingModel):
     cuvee = models.CharField(max_length=200, blank=True, default="")
     terroir = models.CharField(max_length=200, blank=True, default="")
     wine_type = models.ForeignKey(

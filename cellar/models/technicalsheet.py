@@ -8,10 +8,10 @@
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class TechnicalSheet(BaseModel):
+class TechnicalSheet(TrackingModel):
     alcohol_level = models.DecimalField(max_digits=4, decimal_places=2)
     started_apogee = models.IntegerField(null=True, blank=True)
     stopped_apogee = models.IntegerField(null=True, blank=True)

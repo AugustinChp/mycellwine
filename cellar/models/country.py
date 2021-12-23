@@ -9,10 +9,10 @@ from cloudinary.models import CloudinaryField
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class Country(BaseModel):
+class Country(TrackingModel):
     name = models.CharField(max_length=200)
     picture = CloudinaryField('image',
                               folder='mycellwine/countries',

@@ -4,13 +4,13 @@
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 from django.conf import settings
 
 User = settings.AUTH_USER_MODEL
 
 
-class UserCellar(BaseModel):
+class UserCellar(TrackingModel):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     cellar = models.ForeignKey('Cellar', on_delete=models.CASCADE)

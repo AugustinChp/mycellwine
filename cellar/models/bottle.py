@@ -8,12 +8,12 @@
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 from cloudinary.models import CloudinaryField
 
 
-class Bottle(BaseModel):
+class Bottle(TrackingModel):
     year = models.IntegerField(null=True, blank=True)
     picture = CloudinaryField('image',
                               folder='mycellwine/bottles',

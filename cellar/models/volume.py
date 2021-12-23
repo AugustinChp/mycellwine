@@ -8,10 +8,10 @@
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class Volume(BaseModel):
+class Volume(TrackingModel):
     name = models.CharField(max_length=200)
     volume = models.CharField(max_length=10)
     quantity = models.DecimalField(max_digits=6, decimal_places=2)

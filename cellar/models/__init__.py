@@ -1,4 +1,3 @@
-from .base import BaseModel
 from .addbottle import AddBottle
 from .appellation import Appellation
 from .appellationtype import AppellationType
