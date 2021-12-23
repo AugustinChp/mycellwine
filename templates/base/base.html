@@ -17,13 +17,9 @@
         <link rel="stylesheet" href="{% static 'css/all.css' %}">
     </head>
     <body>
-            {% include 'base/navbar.html' %}
-            
-            <div class="content">
-                {% block content %}
+            {% block base %}
 
-                {% endblock content %}
-            </div>            
+            {% endblock base %}         
             {% include 'base/footer.html' %}
             {% include 'base/scripts.html' %}
     </body>
