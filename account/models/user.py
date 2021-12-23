@@ -13,7 +13,6 @@ from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 # local Django
-from helpers.models import TrackingModel
 
 
 class MyUserManager(UserManager):
@@ -54,7 +53,7 @@ class MyUserManager(UserManager):
         return self._create_user(username, email, birth_year, password, **extra_fields)
 
 
-class User(AbstractBaseUser, PermissionsMixin, TrackingModel):
+class User(AbstractBaseUser, PermissionsMixin, models.Model):
     """
     An abstract base class implementing a fully featured User model with
     admin-compliant permissions.
@@ -76,6 +75,8 @@ class User(AbstractBaseUser, PermissionsMixin, TrackingModel):
     )
     email = models.EmailField(_('email address'), blank=False, unique=True)
     birth_year = models.IntegerField(default=1900)
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
     is_staff = models.BooleanField(
         _('staff status'),
         default=False,
@@ -103,7 +104,3 @@ class User(AbstractBaseUser, PermissionsMixin, TrackingModel):
     EMAIL_FIELD = 'email'
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'birth_year']
-
-    @property
-    def token(self):
-        return ''

@@ -13,5 +13,5 @@ from django.urls import include, path
 from .views import *
 
 urlpatterns = [
-    path('', profile),
+    path('register/', register),
 ]
