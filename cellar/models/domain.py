@@ -50,10 +50,10 @@ from cloudinary.models import CloudinaryField
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class Domain(BaseModel):
+class Domain(TrackingModel):
 
     name = models.CharField(max_length=200)
     producer_firstname = models.CharField(

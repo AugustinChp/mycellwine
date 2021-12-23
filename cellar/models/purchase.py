@@ -8,10 +8,10 @@
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class Purchase(BaseModel):
+class Purchase(TrackingModel):
     purchase_place = models.CharField(max_length=200)
     unit_price = models.DecimalField(
         null=True, max_digits=10, decimal_places=2, blank=True)

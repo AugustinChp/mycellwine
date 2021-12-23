@@ -8,10 +8,10 @@
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class CellarBottleOutlet(BaseModel):
+class CellarBottleOutlet(TrackingModel):
     cellar_bottle = models.ForeignKey('CellarBottle', on_delete=models.CASCADE)
     bottle_outlet = models.ForeignKey('BottleOutlet', on_delete=models.CASCADE)
     quantity = models.IntegerField(default=0, blank=True)

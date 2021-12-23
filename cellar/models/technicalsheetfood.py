@@ -8,10 +8,10 @@
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class TechnicalSheetFood(BaseModel):
+class TechnicalSheetFood(TrackingModel):
     technical_sheet = models.ForeignKey(
         'TechnicalSheet', on_delete=models.CASCADE)
     food = models.ForeignKey('Food', on_delete=models.CASCADE)

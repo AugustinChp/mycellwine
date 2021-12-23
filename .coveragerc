@@ -1,0 +1,7 @@
+[run]
+source=account/, cellar/,
+omit=
+    venv
+    */migrations/*
+    */test/*
+    */__init__.py
