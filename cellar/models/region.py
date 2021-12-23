@@ -49,10 +49,10 @@ CLASSES :
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class Region(BaseModel):
+class Region(TrackingModel):
     name = models.CharField(max_length=200)
     country = models.ForeignKey('Country', on_delete=models.CASCADE)
 

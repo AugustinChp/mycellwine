@@ -9,10 +9,10 @@ from django.db import models
 from django.utils import timezone
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class BottleOutlet(BaseModel):
+class BottleOutlet(TrackingModel):
     date = models.DateTimeField(null=False, default=timezone.now)
     event = models.TextField(null=True, blank=True)
 

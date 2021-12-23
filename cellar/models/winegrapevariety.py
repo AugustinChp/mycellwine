@@ -49,10 +49,10 @@ CLASSES :
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class WineGrapeVariety(BaseModel):
+class WineGrapeVariety(TrackingModel):
     wine = models.ForeignKey('Wine', on_delete=models.CASCADE)
     grape_variety = models.ForeignKey('GrapeVariety', on_delete=models.CASCADE)
     rate = models.IntegerField(null=True, blank=True)

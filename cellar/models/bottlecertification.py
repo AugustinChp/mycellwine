@@ -8,10 +8,10 @@
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class BottleCertification(BaseModel):
+class BottleCertification(TrackingModel):
     bottle = models.ForeignKey('Bottle', on_delete=models.CASCADE)
     certification = models.ForeignKey(
         'Certification', on_delete=models.CASCADE)

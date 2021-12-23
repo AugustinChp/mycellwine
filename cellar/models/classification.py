@@ -8,10 +8,10 @@
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class Classification(BaseModel):
+class Classification(TrackingModel):
     name = models.CharField(max_length=200)
 
     class Meta:

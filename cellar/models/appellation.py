@@ -8,10 +8,10 @@
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class Appellation(BaseModel):
+class Appellation(TrackingModel):
     name = models.CharField(max_length=200)
     region = models.ForeignKey('Region', on_delete=models.CASCADE)
     appellation_type = models.ForeignKey(

@@ -49,10 +49,10 @@ import uuid
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class Cellar(BaseModel):
+class Cellar(TrackingModel):
 
     name = models.CharField(max_length=200, default='Ma Cave', blank=True)
     uid = models.UUIDField(default=uuid.uuid4, primary_key=True)

@@ -10,6 +10,18 @@ For the full list of admin and their values, see
 https://docs.djangoproject.com/en/3.2/intro/tutorial02/#introducing-the-django-admin
 """
 
-# from django.contrib import admin
+from django.contrib import admin
+from .models import *
 
 # Register your models here.
+
+admin.site.register(Bottle)
+admin.site.register(Cellar)
+admin.site.register(CellarBottle)
+admin.site.register(Country)
+admin.site.register(Region)
+admin.site.register(Appellation)
+admin.site.register(AppellationType)
+admin.site.register(UserCellar)
+admin.site.register(Wine)
+admin.site.register(WineType)

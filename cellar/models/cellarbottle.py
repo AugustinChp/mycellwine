@@ -49,10 +49,10 @@ CLASSES :
 from django.db import models
 
 # local Django
-from .base import BaseModel
+from helpers.models import TrackingModel
 
 
-class CellarBottle(BaseModel):
+class CellarBottle(TrackingModel):
 
     cellar = models.ForeignKey('Cellar', on_delete=models.CASCADE)
     bottle = models.ForeignKey('Bottle', on_delete=models.CASCADE)
