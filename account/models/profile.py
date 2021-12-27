@@ -21,11 +21,13 @@ class Profile(TrackingModel):
     zip_code = models.CharField(max_length=5, blank=True, null=True)
     city = models.CharField(max_length=200, blank=True, null=True)
     country = models.ForeignKey(
-        Country, null=True, on_delete=models.SET_NULL)
+        Country, null=True, blank=True, on_delete=models.SET_NULL)
 
     @property
     def get_full_name(self):
         return f'{self.first_name} {self.last_name}'
 
     def __str__(self):
+        if self.first_name is None or self.last_name is None:
+            return self.user.username
         return self.get_full_name

@@ -22,9 +22,3 @@ class TrackingModel(models.Model):
     class Meta:
         abstract = True
         ordering = ('-created_at',)
-
-    def save(self, *args, **kwargs):
-        self.modified_by = get_current_user()
-        if not self.created_by:
-            self.created_by = get_current_user()
-        super().save(*args, **kwargs)

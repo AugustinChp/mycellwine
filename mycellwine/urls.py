@@ -31,7 +31,7 @@ from django.contrib import admin
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('cellar.urls')),
-    path('auth/', include('account.urls'))
+    path('auth/', include('account.urls')),
 ]
 
 

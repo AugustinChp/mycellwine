@@ -13,6 +13,7 @@ from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 # local Django
+from account.models import Profile
 
 
 class MyUserManager(UserManager):
@@ -34,16 +35,21 @@ class MyUserManager(UserManager):
         user.set_password(password)
         user.birth_year = birth_year
         user.save(using=self._db)
+        profile = Profile.objects.create(
+            user=user, created_by=user, modified_by=user)
+        profile.save(using=self._db)
         return user
 
     def create_user(self, username, email, birth_year, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', False)
         extra_fields.setdefault('is_superuser', False)
+        extra_fields.setdefault('is_active', False)
         return self._create_user(username, email, birth_year, password, **extra_fields)
 
     def create_superuser(self, username, email, birth_year, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
+        extra_fields.setdefault('role', 'CREATOR')
 
         if extra_fields.get('is_staff') is not True:
             raise ValueError('Superuser must have is_staff=True.')
@@ -60,6 +66,13 @@ class User(AbstractBaseUser, PermissionsMixin, models.Model):
 
     Username and password are required. Other fields are optional.
     """
+    CREATOR = 'CREATOR'
+    SUBSCRIBER = 'SUBSCRIBER'
+
+    ROLE_CHOICES = (
+        (CREATOR, 'Créateur'),
+        (SUBSCRIBER, 'Abonné'),
+    )
     username_validator = UnicodeUsernameValidator()
 
     username = models.CharField(
@@ -74,6 +87,8 @@ class User(AbstractBaseUser, PermissionsMixin, models.Model):
         },
     )
     email = models.EmailField(_('email address'), blank=False, unique=True)
+    role = models.CharField(max_length=30, choices=ROLE_CHOICES,
+                            default='SUBSCRIBER', blank=True)
     birth_year = models.IntegerField(default=1900)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
@@ -101,6 +116,5 @@ class User(AbstractBaseUser, PermissionsMixin, models.Model):
     )
     objects = MyUserManager()
 
-    EMAIL_FIELD = 'email'
-    USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email', 'birth_year']
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username', 'birth_year']
