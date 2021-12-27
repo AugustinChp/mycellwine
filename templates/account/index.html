@@ -2,19 +2,22 @@
 {% load static %}
 
 {% block base %}       
-    <div class="account-container sign-up-mode">
-        <div class="account-forms-container">
-            <div class="account-form">
+    <div class="account-body">
+        <div class="account-forms">
+            <div class="account-form-container">
                 {% block content %}
 
                 {% endblock content %}
             </div>
-            <div class="panels-container">
-                {% block panel %}
-                
-                {% endblock panel %}
-            </div>
         </div>
-    </div> 
+    </div>
+    <div class="account-footer">
+        <div class="account-footer-container"></div>
+        <div class="panels-container">
+            {% block panel %}
+            
+            {% endblock panel %}
+        </div>
+    </div>
 
 {% endblock base %}

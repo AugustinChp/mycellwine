@@ -11,18 +11,18 @@
 
         <div class="input-field" id="usernameArea">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" name="username" id="usernameField" value="{{fieldValues.username}}">
+            <input type="text" placeholder="Username"  autocomplete="off" name="username" id="usernameField" value="{{fieldValues.username}}">
           </div>
           <div class="invalid-feedback username-feedback"></div>
           <p class="username-checking"></p>
           <div class="input-field">
             <i class="fas fa-calendar"></i>
-            <input type="number" placeholder="Birth year" name="birth_year" value="{{fieldValues.birth_year}}">
+            <input type="number" pattern="\d*" placeholder="Birth year" name="birth_year" value="{{fieldValues.birth_year}}">
           </div>
           <div class="invalid-feedback"></div>
           <div class="input-field" id="emailArea">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" name="email" id="emailField" value="{{fieldValues.email}}">
+            <input type="email" placeholder="Email"  autocomplete="off" name="email" id="emailField" value="{{fieldValues.email}}">
           </div>
           <div class="invalid-feedback email-feedback"></div>
           <div class="input-field">
@@ -39,14 +39,10 @@
 {% block panel %}
 <div class="panel">
     <div class="content">
-      <h3>New here ?</h3>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-        ex ratione. Aliquid!
-      </p>
-      <button class="btn transparent" id="sign-up-btn">
-        Sign up
-      </button>
+      <h3>Already account ?</h3>
+      <a href="{% url 'login' %}" class="btn transparent" id="sign-up-btn">
+        Sign in
+      </a>
     </div>
   </div>
 {% endblock panel %}

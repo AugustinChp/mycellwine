@@ -18,7 +18,7 @@ from django.utils.translation import activate, gettext as _
 from django.conf import settings
 from django.urls import reverse
 from django.utils.encoding import force_bytes, force_text, DjangoUnicodeDecodeError
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.http import urlsafe_base64_encode
 from django.contrib.sites.shortcuts import get_current_site
 
 # Django local
