@@ -38,8 +38,34 @@
                         <h1 class="offcanvas-title">Profil</h1>
                     </div>
                 </div>
-                <div class="offcanvas-body"></div>
-                <div class="offcanvas-footer"></div>
+                <div class="offcanvas-body">
+                    <ul class="offcanvas-menu">
+                        <li>
+                            <a href="#" class="offcanvas-item">
+                                <div class="item-label">Mon profil</div>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="offcanvas-item">
+                                <div class="item-label">Ma cave</div>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="offcanvas-item">
+                                <div class="item-label">Mes vins</div>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="offcanvas-footer">
+                    <form action="{% url 'logout' %}" method="POST">
+                        {% csrf_token %}
+                        <input class="warning-link" type="submit" value="Logout">
+                    </form>
+                </div>
             </div>
         </div>
     </div>

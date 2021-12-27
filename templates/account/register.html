@@ -2,40 +2,37 @@
 {% load static %}
 
 {% block content %}
-    <form action="#" class="register-form">
+    <form action="{% url 'register' %}" class="register-form" method="post">
+        {% csrf_token %}
+
         <h2 class="title">Register</h2>
-        <div class="input-field">
+        
+        {% include 'account/partials/_messages.html' %}
+
+        <div class="input-field" id="usernameArea">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input type="text" placeholder="Username" name="username" id="usernameField" value="{{fieldValues.username}}">
           </div>
+          <div class="invalid-feedback username-feedback"></div>
+          <p class="username-checking"></p>
           <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="number" min="1900" placeholder="Birth year" />
+            <i class="fas fa-calendar"></i>
+            <input type="number" placeholder="Birth year" name="birth_year" value="{{fieldValues.birth_year}}">
           </div>
-          <div class="input-field">
+          <div class="invalid-feedback"></div>
+          <div class="input-field" id="emailArea">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" />
+            <input type="email" placeholder="Email" name="email" id="emailField" value="{{fieldValues.email}}">
           </div>
+          <div class="invalid-feedback email-feedback"></div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Password" name="password" id="passwordField">
+            <span class="password-show" id="showPassword">
+              <i class="fas fa-eye"></i>
+            </span>
           </div>
-          <input type="submit" class="btn" value="Sign up" />
-          <p class="social-text">Or Sign up with social platforms</p>
-          <div class="social-media">
-            <a href="#" class="social-icon">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-google"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
+          <input type="submit" class="btn submit-btn" value="Register">
     </form>
 {% endblock content %}
 
