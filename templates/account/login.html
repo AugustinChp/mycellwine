@@ -6,39 +6,39 @@
 <form action="{% url 'login' %}" class="register-form" method="post">
     {% csrf_token %}
 
-    <h2 class="title">Register</h2>
+    <h2 class="title">Login</h2>
 
     {% include 'account/partials/_messages.html' %}
-
-    <div class="invalid-feedback"></div>
-        <div class="input-field">
-        <i class="fas fa-envelope"></i>
-        <input type="email" placeholder="Email" name="email">
-        </div>
-        <div class="invalid-feedback email-feedback"></div>
-        <div class="input-field">
-        <i class="fas fa-lock"></i>
-        <input type="password" placeholder="Password" name="password" id="passwordField">
-        <span class="password-show" id="showPassword">
-            <i class="fas fa-eye"></i>
-        </span>
-        </div>
-        <input type="submit" class="btn submit-btn" value="Login">
+    <div class="input-field">
+      <i class="fas fa-envelope"></i>
+      <input type="email" placeholder="Email" name="email">
+    </div>
+    <div class="invalid-feedback email-feedback"></div>
+    <div class="input-field">
+      <i class="fas fa-lock"></i>
+      <input type="password" placeholder="Password" name="password" id="passwordField">
+      <span class="password-show" id="showPassword">
+          <i class="fas fa-eye"></i>
+      </span>
+    </div>
+    <input type="submit" class="btn submit-btn" value="Login">
+    <div class="reset-password">
+      <span>Forgot password ?</span>
+      <a href="{% url 'reset-password' %}">Reset it</a>
+    </div>
 </form>
+
+
 
 {% endblock content %}
 
 {% block panel %}
 <div class="panel">
     <div class="content">
-      <h3>New here ?</h3>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-        ex ratione. Aliquid!
-      </p>
-      <button class="btn transparent" id="sign-up-btn">
+      <h3>Don't have an account ?</h3>
+      <a href="{% url 'register' %}" class="btn transparent" id="sign-up-btn">
         Sign up
-      </button>
+      </a>
     </div>
   </div>
 {% endblock panel %}
