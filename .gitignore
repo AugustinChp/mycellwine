@@ -131,3 +131,4 @@ dmypy.json
 
 # dump
 /dump.json
+.dump
