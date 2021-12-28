@@ -11,12 +11,13 @@ from django.db import models
 from helpers.models import TrackingModel
 
 
-class AppellationType(TrackingModel):
+class Unit(TrackingModel):
     name = models.CharField(max_length=200)
-    country = models.ForeignKey('Country', on_delete=models.CASCADE)
+    abbr = models.CharField(max_length=5)
+    convertion = models.DecimalField(max_digits=8, decimal_places=3)
 
     class Meta:
-        db_table = 'AppellationType'
+        db_table = 'Unit'
         app_label = 'cellar'
 
     def __str__(self):

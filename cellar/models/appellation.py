@@ -15,7 +15,7 @@ class Appellation(TrackingModel):
     name = models.CharField(max_length=200)
     region = models.ForeignKey('Region', on_delete=models.CASCADE)
     appellation_type = models.ForeignKey(
-        'AppellationType', on_delete=models.CASCADE)
+        'AppellationType', on_delete=models.SET_NULL, null=True)
 
     class Meta:
         db_table = 'Appellation'
