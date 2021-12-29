@@ -1,0 +1,24 @@
+.modal {
+    background: rgba(113, 113, 113, 0.5);
+}
+
+.modal-dialog {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-header h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.modal-body p {
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.modal-footer {
+    justify-content: center;
+    padding: 0.25rem;
+}

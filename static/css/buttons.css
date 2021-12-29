@@ -1,0 +1,40 @@
+.btn {
+    width: 150px;
+    background-color: #8A1A32;
+    border: none;
+    outline: none;
+    height: 40px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.btn-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: rgba(138, 26, 50, 0.8);
+    color: #fff;
+}
+
+.close {
+    display: inline-block;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: rgb(35, 35, 35);
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 5px;
+}
+
+.close i {
+    font-size: 1.3rem;
+}

@@ -20,7 +20,6 @@ from .region import Region
 from .technicalsheet import TechnicalSheet
 from .technicalsheetfood import TechnicalSheetFood
 from .unit import Unit
-from .usercellar import UserCellar
 from .volume import Volume
 from .wine import Wine
 from .winegrapevariety import WineGrapeVariety

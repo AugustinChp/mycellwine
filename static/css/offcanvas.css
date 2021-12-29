@@ -43,7 +43,7 @@ body {
     font-weight: 800;
 }
 
-.offcanvas-container .header .close {
+.offcanvas-container .header .offcanvas-close {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -52,18 +52,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.offcanvas-close {
-    display: inline-block;
-    border-radius: 50%;
-    border: none;
-    outline: none;
-    color: rgb(35, 35, 35);
-    position: relative;
-    cursor: pointer;
-    background-color: transparent;
-    padding: 10px;
 }
 
 .offcanvas-container .header .title {

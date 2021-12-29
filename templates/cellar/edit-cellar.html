@@ -1,0 +1,9 @@
+{% extends 'cellar/index.html' %}
+{% load static %}
+
+{% block content %}
+<form action="{% url 'delete-cellar' %}" method="POST">
+    {% csrf_token %}
+    <input class="warning-link" type="submit" value="Supprimer">
+</form>
+{% endblock content %}

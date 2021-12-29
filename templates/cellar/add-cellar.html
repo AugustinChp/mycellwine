@@ -1,0 +1,50 @@
+{% extends 'cellar/index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="add-cellar-container">
+    <div class="add-cellar-content">
+        {% include 'base/partials/_messages.html' %}
+        <div class="add-cellar-title">
+            <h3>Open your wine cellar</h3>
+            <p>Open a new wine cellar or join an existing one</p>
+        </div>
+        <div class="add-cellar-form">
+            <div class="add-cellar-action">
+                <form action="{% url 'add-cellar' %}" method='POST'>
+                    {% csrf_token %}
+                    <input type="submit" class="btn submit-btn" id="createNewCellar" value="Create">
+                    <div class="modal" id="joinCellarModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5>Join a wine cellar</h5>
+                                    <div class="close" id="modalClose">
+                                        <i class="bi bi-x"></i>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Please enter below the invitation code that has been shared with you</p>
+                                    <div class="input-field">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="text" placeholder="Invite code" name="invite_code" id="inviteCodeField" value="{{values.invite_code}}">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="submit" class="btn submit-btn" value="Join">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="add-cellar-action">
+                <div class="btn btn-div" id="joinCellar">
+                    <div class="btn-label">Join</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
