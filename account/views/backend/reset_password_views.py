@@ -17,6 +17,7 @@ from django.conf import settings
 
 # Django local
 from account.models import User
+from helpers.email_threading import EmailThread
 
 
 class ResetPasswordView(View):
@@ -59,7 +60,7 @@ class ResetPasswordView(View):
                 settings.EMAIL_HOST_USER,
                 [email_field],
             )
-            email.send(fail_silently=False)
+            EmailThread(email).start()
             messages.success(
                 request, f'Welcome {user[0].username} ! Your account has been successfully created !')
             return redirect('login')

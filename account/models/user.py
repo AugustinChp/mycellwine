@@ -14,6 +14,7 @@ from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 # local Django
 from account.models import Profile
+from cellar.models import Cellar
 
 
 class MyUserManager(UserManager):
@@ -92,6 +93,7 @@ class User(AbstractBaseUser, PermissionsMixin, models.Model):
     birth_year = models.IntegerField(default=1900)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+    cellars = models.ManyToManyField(Cellar)
     is_staff = models.BooleanField(
         _('staff status'),
         default=False,
@@ -118,3 +120,7 @@ class User(AbstractBaseUser, PermissionsMixin, models.Model):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'birth_year']
+
+    @property
+    def has_cellars(self):
+        return self.cellars.exists()

@@ -56,6 +56,7 @@ class Cellar(TrackingModel):
 
     name = models.CharField(max_length=200, default='Ma Cave', blank=True)
     uid = models.UUIDField(default=uuid.uuid4, primary_key=True)
+    bottles = models.ManyToManyField('Bottle', through='CellarBottle')
 
     class Meta:
         db_table = 'Cellar'
@@ -63,3 +64,9 @@ class Cellar(TrackingModel):
 
     def __str__(self):
         return f'{self.name}'
+
+    def has_bottles(self):
+        return self.bottles.exist()
+
+    def has_users(self):
+        return self.user_set.exists()

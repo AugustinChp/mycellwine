@@ -24,6 +24,7 @@ from django.contrib.sites.shortcuts import get_current_site
 # Django local
 from account.models import User
 from account.utils import account_activation_token
+from helpers.email_threading import EmailThread
 
 
 class UsernameValidationView(View):
@@ -101,7 +102,7 @@ class RegistrationView(View):
                     settings.EMAIL_HOST_USER,
                     [email_field],
                 )
-                email.send(fail_silently=False)
+                EmailThread(email).start()
                 messages.success(
                     request, f'Welcome {user.username} ! Your account has been successfully created !')
                 return render(request, "account/register.html")

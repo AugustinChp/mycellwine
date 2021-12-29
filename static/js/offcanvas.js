@@ -1,11 +1,12 @@
-(function () {
-  'use strict'
-  document.querySelector('#profilSideCollapse').addEventListener('click', function () {
-    document.querySelector('.profil.offcanvas-collapse').classList.toggle('open')
-  })
+const profilCollapse = document.querySelector('#profilSideCollapse')
+const profilOffcanvas = document.querySelector('.profil.offcanvas-collapse')
+const profilClose = document.querySelector('#offCanvasCloseProfil')
 
-  document.querySelector('#offCanvasCloseProfil').addEventListener('click', function () {
-    document.querySelector('.profil.offcanvas-collapse').classList.toggle('open')
-  })
+profilCollapse.addEventListener('click', function () {
+  profilOffcanvas.classList.toggle('open')
+})
 
-})()
+profilClose.addEventListener('click', function () {
+  profilOffcanvas.classList.toggle('open')
+})
+
