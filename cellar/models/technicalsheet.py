@@ -30,4 +30,4 @@ class TechnicalSheet(TrackingModel):
         app_label = 'cellar'
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.id}'

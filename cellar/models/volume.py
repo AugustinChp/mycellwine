@@ -24,4 +24,4 @@ class Volume(TrackingModel):
         app_label = 'cellar'
 
     def __str__(self):
-        return f'{self.name} ({self.volume})'
+        return f'{self.name}'

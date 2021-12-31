@@ -29,8 +29,8 @@ class Bottle(TrackingModel):
         related_name="certification",
         blank=True,
     )
-    technical_sheet = models.ForeignKey(
-        'TechnicalSheet', null=True, on_delete=models.SET_NULL)
+    technical_sheet = models.OneToOneField(
+        'TechnicalSheet', null=True, blank=True, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'Bottle'

@@ -9,6 +9,7 @@ import pdb
 from django.views import View
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.core.paginator import Paginator
 
 
 # local Django
@@ -22,7 +23,18 @@ class CellarView(View):
         current_user = request.user
         if not current_user.has_cellars:
             return redirect('add-cellar')
-        return render(request, 'cellar/cellar.html')
+        cellar = current_user.cellars.first()
+        bottles = cellar.cellarbottle_set.all()
+        paginator = Paginator(bottles, 5)
+        page_number = request.GET.get('page')
+        page_obj = Paginator.get_page(paginator, page_number)
+
+        context = {
+            'bottles': bottles,
+            'page_obj': page_obj
+        }
+
+        return render(request, 'cellar/cellar.html', context)
 
 
 class AddCellarView(View):

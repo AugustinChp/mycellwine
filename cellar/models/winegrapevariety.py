@@ -62,4 +62,4 @@ class WineGrapeVariety(TrackingModel):
         app_label = 'cellar'
 
     def __str__(self):
-        return f'{self.wine} - {self.grapevariety}'
+        return f'{self.wine} - {self.grape_variety}'

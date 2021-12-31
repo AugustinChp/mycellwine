@@ -1,0 +1,34 @@
+{% load static %}
+
+{% for item in bottles %}
+    <div class="cellar-card">
+        <div class="card-color {{item.bottle.wine.wine_type.name}}"></div>
+        <div class="card-img">
+            <img src="{{item.bottle.picture.url}}" alt="Bouteille {{item.bottle.id}}">
+        </div>
+        <div class="card-details">
+            <div class="details-domain">{{item.bottle.wine.domain}}</div>
+            <div class="details-appelation">{{item.bottle.wine.appellation.name}}</div>
+            <div class="details-location">
+                <div class="country-flag">
+                    <img src="{{item.bottle.wine.appellation.region.country.picture.url}}" alt="">
+                </div>
+                <div class="location-label">{{item.bottle.wine.appellation.region.name}}, {{item.bottle.wine.appellation.region.country.name}}</div>
+            </div>
+            <div class="details-features">
+                <div class="feature-item">
+                    <i class="bi bi-clock-history"></i>
+                    <div class="value">{{item.bottle.year}}</div>
+                </div>
+                <div class="feature-item">
+                    <i class="bi bi-thermometer-half"></i>
+                    <div class="value">{{item.bottle.technical_sheet.alcohol_level}}°</div>
+                </div>
+                <div class="feature-item">
+                    <i class="bi bi-ui-radios-grid"></i>
+                    <div class="value">{{item.quantity}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

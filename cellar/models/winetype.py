@@ -13,6 +13,7 @@ from helpers.models import TrackingModel
 
 class WineType(TrackingModel):
     name = models.CharField(max_length=200)
+    fra_name = models.CharField(max_length=200, default='')
 
     class Meta:
         db_table = 'WineType'
